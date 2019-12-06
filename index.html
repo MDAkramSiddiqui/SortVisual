@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+
+</head>
+<body>
+
+    <header class="heading">
+        <h1 class="heading-primary"><a href="main.html">Sorting Visualizer</a></h1>
+    </header>
+
+    <section class="content">
+
+        <div class="menu row">
+
+            <div class="col-1-of-3">
+                <select class="choices">
+                    <option value="bubble">bubble sort</option>
+                    <option value="selection">selection sort</option>
+                    <option value="insertion">insertion sort</option>
+                </select>
+            </div>
+
+            <div class="col-1-of-3">
+                <input class="slider" type="range" min="0" max="90" value="10"/>
+            </div> 
+
+            <div class="col-1-of-3">
+                <button class="btn-submit" onclick="init()">Visualize</button>
+            </div>
+
+        </div>
+
+        <div class="display">
+
+            <div class="canvas"></div>
+
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="foot">
+            <span> BY Mohammad Akram </span>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
