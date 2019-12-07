@@ -336,7 +336,7 @@ function _helper_insertion_sort(arr, i, len) {
         if(j >= 0 && arr[j] >key) {
 
             div2 = document.getElementById(j + '');
-            div2.style.backgroundColor = '#8e44ad';
+            div2.style.backgroundColor = '#F2BD96';
             prop2 = div2.getAttribute('style');
 
             temp = arr[j+1];
@@ -349,7 +349,7 @@ function _helper_insertion_sort(arr, i, len) {
             }, callbackTime_2/3);
 
             // window.setTimeout(function() {
-            //     div1.style.backgroundColor = '#079992';
+            //     div1.style.backgroundColor = '#FE6F27';
             // }, callbackTime_2*2/3);
 
             // document.querySelector('.canvas').innerHTML = '';
@@ -377,7 +377,7 @@ function _helper_insertion_sort(arr, i, len) {
             window.clearInterval(handle_2);
         }
 
-    }, callbackTime_2);
+    }, callbackTime_2*3);
 
 
     console.log(i);
@@ -396,7 +396,7 @@ function insertion_sort(arr, len) {
             window.clearInterval(handle);
         }
 
-    }, callbackTime_1);
+    }, callbackTime_1*2);
 
 }
 
