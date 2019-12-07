@@ -285,7 +285,7 @@ function selection_sort(arr, len) {
         i++;
     }
 
-     var handle = window.setInterval(function() {
+    var handle = window.setInterval(function() {
 
         if(i < len-1) {
 
@@ -310,12 +310,17 @@ function selection_sort(arr, len) {
 function _helper_insertion_sort(arr, i, len) {
 
     var j = i-1;
+    var color_len = i;
     var key = arr[i];
-    var callbackTime_2 = Math.floor((callbackTime_1*0.9)/len);
+    
+    callbackTime_2 = Math.floor((callbackTime_1*0.9)/len);
 
     // var div1;
     // div1 = document.getElementById(j+'');
     // div1.style.backgroundColor = '#079992';
+
+    console.log(`Hello I am in the beginning of the call and is ${i}`);
+    
 
     var handle_2 = window.setInterval(function() {
 
@@ -328,7 +333,7 @@ function _helper_insertion_sort(arr, i, len) {
             prop1 = div1.getAttribute('style');
         }
 
-        if(j >= 0 && arr[j] > key) {
+        if(j >= 0 && arr[j] >key) {
 
             div2 = document.getElementById(j + '');
             div2.style.backgroundColor = '#8e44ad';
@@ -343,25 +348,32 @@ function _helper_insertion_sort(arr, i, len) {
                 div2.style = prop1;
             }, callbackTime_2/3);
 
-            window.setTimeout(function() {
-                div1.style.backgroundColor = '#079992';
-            }, callbackTime_2*2/3);
+            // window.setTimeout(function() {
+            //     div1.style.backgroundColor = '#079992';
+            // }, callbackTime_2*2/3);
 
-            document.querySelector('.canvas').innerHTML = '';
-            insert_div(arr);
+            // document.querySelector('.canvas').innerHTML = '';
+            // insert_div(arr);
 
-            j--;
+            j--; 
 
         } else {
 
-             var divTemp;
-             if(j >= 0 ) divTemp = document.getElementById(j+1 + '');
-             else divTemp = document.getElementById(0 + '');
+            var divTemp;
+            // if(j >= 0 ) divTemp = document.getElementById(j + '');
+            // else divTemp = document.getElementById(0 + '');
+            // divTemp = document.getElementById(j+1 + '');
+            // divTemp.style.backgroundColor = '#079992';
 
-            divTemp.style.backgroundColor = '#079992';
+            while(color_len >= 0) {
+                divTemp = document.getElementById(color_len + '');
+                divTemp.style.backgroundColor = '#079992';
+                color_len--;
+            }
 
-             console.log('End is Changed');
+             console.log('End is Changed' + 'And the value of J is : ' + (j+1) + '\n');
 
+            // stopping the invterval handle_2
             window.clearInterval(handle_2);
         }
 
@@ -373,7 +385,8 @@ function _helper_insertion_sort(arr, i, len) {
 }
 
 function insertion_sort(arr, len) {
-    var i = 1;
+    var i = 0;
+
     var handle = window.setInterval(function() {
 
         if(i < len) {
@@ -418,4 +431,3 @@ function init_sort(arr, type) {
     }
 
 }
- 
